@@ -1,7 +1,10 @@
-﻿internal class Program
+﻿using Consola.Class;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        var test = new Test1(10.5,"kim");
+        test.HelloWorld();
     }
 }

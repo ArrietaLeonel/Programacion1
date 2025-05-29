@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms", "WinForms\WinFor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{8E4543CE-9D63-42FB-ACE7-583CCA0C3201}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppWebAssembly", "BlazorAppWebAssembly\BlazorAppWebAssembly.csproj", "{CE1A3EF6-4790-408D-95D8-28292F43E507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{94F73A23-C032-4A48-B77B-770B00A92563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{8E4543CE-9D63-42FB-ACE7-583CCA0C3201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E4543CE-9D63-42FB-ACE7-583CCA0C3201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E4543CE-9D63-42FB-ACE7-583CCA0C3201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1A3EF6-4790-408D-95D8-28292F43E507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1A3EF6-4790-408D-95D8-28292F43E507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1A3EF6-4790-408D-95D8-28292F43E507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1A3EF6-4790-408D-95D8-28292F43E507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F73A23-C032-4A48-B77B-770B00A92563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F73A23-C032-4A48-B77B-770B00A92563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F73A23-C032-4A48-B77B-770B00A92563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F73A23-C032-4A48-B77B-770B00A92563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
