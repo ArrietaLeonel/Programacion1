@@ -1,4 +1,4 @@
-﻿namespace WinForms.Models
+﻿namespace WinForms.Models.Clima
 {
     public class Current
     {

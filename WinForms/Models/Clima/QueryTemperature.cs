@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinForms.Models
+namespace WinForms.Models.Clima
 {
     public class QueryTemperature
     {

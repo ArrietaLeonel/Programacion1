@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinForms.Models;
+using WinForms.Models.Clima;
 
 namespace WinForms.VIews
 {
