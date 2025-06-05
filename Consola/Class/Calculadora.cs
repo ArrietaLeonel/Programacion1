@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Consola.Class
 {
-    public class Claculadora
+    public class Calculadora
     {
         private double _numero1;
         private double _numero2;
-        public Claculadora(double numero1, double numero2)
+        public static int instancias;
+        public Calculadora(double numero1, double numero2)
         {
+            instancias++;
             _numero1 = numero1;
             _numero2 = numero2;
         }
