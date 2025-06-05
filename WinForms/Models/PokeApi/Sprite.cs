@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace WinForms.Models.PokeApi
 {
-    public class Pokemon
+    public class Sprite
     {
-
-        public List<Ability> Abilities { get; set; }
-        public Sprite Sprites { get; set; }
-
-        public List<Stat> Stats { get; set; }
+        public string front_default { get; set; }
     }
 }

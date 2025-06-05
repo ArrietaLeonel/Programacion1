@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinForms.Models.PokeApi
 {
-    public class Sprites
+    public class Stat
     {
-        public string front_default { get; set; }
+        public int base_stat { get; set; }
+        public Stat2 stat { get; set; }
     }
 }
