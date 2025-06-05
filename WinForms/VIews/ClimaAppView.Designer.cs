@@ -1,4 +1,4 @@
-﻿namespace WinForms.VIews
+﻿namespace WinForms.Views
 {
     partial class ClimaAppView
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinForms.VIews
+namespace WinForms.Views
 {
     public partial class EditorTextoView : Form
     {
