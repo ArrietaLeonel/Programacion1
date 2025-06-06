@@ -22,6 +22,7 @@ namespace WinForms.Views
         List<Label> _lstlabelAbility;
         List<Label> _lstlabelStatValue;
         List<Label> _lstlabelStat2Name;
+        List<FlavorTextEntry> _description;
 
         public PokeApiView()
         {
@@ -106,9 +107,11 @@ namespace WinForms.Views
                 {
                     var pokemon = await response.Content.ReadFromJsonAsync<Pokemon>();
                     pictureBox1.Load(pokemon?.Sprites?.front_default);
-
+                    
                     for (int i = 0; i < pokemon.Abilities.Count; i++)
                     {
+                        
+
                         _lstlabelAbility[i].Text = pokemon.Abilities[i].ability.name;
                     }
                     for (int i = 0; i < pokemon.Stats.Count; i++)
@@ -126,7 +129,13 @@ namespace WinForms.Views
             }
 
         }
-
+        private async Task ObtenerHabilidad()
+        {
+            try
+            {
+                var urlAbility = $"https://pokeapi.co/api/v2/ability/{_lstPokemon.results.}";
+            }
+        }
         private async void cbxPokemons_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!_cbxCargado) return;
