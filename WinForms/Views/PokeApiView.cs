@@ -18,6 +18,7 @@ namespace WinForms.Views
         string url = "https://pokeapi.co/api/v2/pokemon?limit=10000";
         HttpClient _httpClient;
         Root _lstPokemon;
+        Pokemon _listPokemonHabilidad;
         bool _cbxCargado = false;
         List<Label> _lstlabelAbility;
         List<Label> _lstlabelStatValue;
@@ -107,10 +108,10 @@ namespace WinForms.Views
                 {
                     var pokemon = await response.Content.ReadFromJsonAsync<Pokemon>();
                     pictureBox1.Load(pokemon?.Sprites?.front_default);
-                    
+
                     for (int i = 0; i < pokemon.Abilities.Count; i++)
                     {
-                        
+
 
                         _lstlabelAbility[i].Text = pokemon.Abilities[i].ability.name;
                     }
@@ -129,11 +130,26 @@ namespace WinForms.Views
             }
 
         }
-        private async Task ObtenerHabilidad()
+        private async Task ObtenerHabilidad(string abilityName)
         {
             try
             {
-                var urlAbility = $"https://pokeapi.co/api/v2/ability/{_lstPokemon.results.}";
+
+                var urlAbility = $"https://pokeapi.co/api/v2/ability/{abilityName}";
+                var response = await _httpClient.GetAsync(urlAbility);
+                if (response.IsSuccessStatusCode)
+                {
+                    var habilidad = await response.Content.ReadFromJsonAsync<Ability>();
+
+                }
+                else
+                {
+                    MessageBox.Show("Error al obtener la habilidad del Pokémon");
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
         private async void cbxPokemons_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,6 +162,11 @@ namespace WinForms.Views
         private void btnRandom_Click(object sender, EventArgs e)
         {
             cbxPokemons.SelectedIndex = new Random().Next(0, cbxPokemons.Items.Count);
+        }
+
+        private async void lblAbility1_MouseHover(object sender, EventArgs e)
+        {
+            await ObtenerHabilidad(lblAbility1.Text);
         }
     }
 }

@@ -84,34 +84,42 @@
             // lblAbility1
             // 
             lblAbility1.AutoSize = true;
+            lblAbility1.Cursor = Cursors.Help;
             lblAbility1.Location = new Point(496, 107);
             lblAbility1.Name = "lblAbility1";
             lblAbility1.Size = new Size(0, 15);
             lblAbility1.TabIndex = 5;
+            lblAbility1.MouseHover += lblAbility1_MouseHover;
             // 
             // lblAbility2
             // 
             lblAbility2.AutoSize = true;
+            lblAbility2.Cursor = Cursors.Help;
             lblAbility2.Location = new Point(660, 107);
             lblAbility2.Name = "lblAbility2";
             lblAbility2.Size = new Size(0, 15);
             lblAbility2.TabIndex = 6;
+            lblAbility2.MouseHover += lblAbility1_MouseHover;
             // 
             // lblAbility3
             // 
             lblAbility3.AutoSize = true;
+            lblAbility3.Cursor = Cursors.Help;
             lblAbility3.Location = new Point(496, 141);
             lblAbility3.Name = "lblAbility3";
             lblAbility3.Size = new Size(0, 15);
             lblAbility3.TabIndex = 7;
+            lblAbility3.MouseHover += lblAbility1_MouseHover;
             // 
             // lblAbility4
             // 
             lblAbility4.AutoSize = true;
+            lblAbility4.Cursor = Cursors.Help;
             lblAbility4.Location = new Point(660, 141);
             lblAbility4.Name = "lblAbility4";
             lblAbility4.Size = new Size(0, 15);
             lblAbility4.TabIndex = 8;
+            lblAbility4.MouseHover += lblAbility1_MouseHover;
             // 
             // lblStat
             // 
