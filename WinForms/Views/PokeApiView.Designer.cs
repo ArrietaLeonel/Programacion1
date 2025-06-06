@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokeApiView));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             cbxPokemons = new ComboBox();
@@ -35,7 +36,6 @@
             lblAbility2 = new Label();
             lblAbility3 = new Label();
             lblAbility4 = new Label();
-            lblStat = new Label();
             lblStat1 = new Label();
             lblStat1b = new Label();
             lblStat3b = new Label();
@@ -49,14 +49,18 @@
             lblStat6b = new Label();
             lblStat6 = new Label();
             btnRandom = new Button();
+            lblStat = new Label();
+            panel1 = new Panel();
+            iconPictureBoxCircleQuestion = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBoxCircleQuestion).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(67, 147);
+            pictureBox1.Location = new Point(77, 107);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(262, 205);
+            pictureBox1.Size = new Size(212, 205);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -64,9 +68,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(577, 82);
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label1.Location = new Point(536, 71);
             label1.Name = "label1";
-            label1.Size = new Size(69, 15);
+            label1.Size = new Size(136, 30);
             label1.TabIndex = 3;
             label1.Text = "Habilidades";
             // 
@@ -75,7 +80,7 @@
             cbxPokemons.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbxPokemons.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cbxPokemons.FormattingEnabled = true;
-            cbxPokemons.Location = new Point(127, 82);
+            cbxPokemons.Location = new Point(122, 78);
             cbxPokemons.Name = "cbxPokemons";
             cbxPokemons.Size = new Size(121, 23);
             cbxPokemons.TabIndex = 4;
@@ -85,7 +90,7 @@
             // 
             lblAbility1.AutoSize = true;
             lblAbility1.Cursor = Cursors.Help;
-            lblAbility1.Location = new Point(496, 107);
+            lblAbility1.Location = new Point(511, 116);
             lblAbility1.Name = "lblAbility1";
             lblAbility1.Size = new Size(0, 15);
             lblAbility1.TabIndex = 5;
@@ -95,45 +100,36 @@
             // 
             lblAbility2.AutoSize = true;
             lblAbility2.Cursor = Cursors.Help;
-            lblAbility2.Location = new Point(660, 107);
+            lblAbility2.Location = new Point(675, 116);
             lblAbility2.Name = "lblAbility2";
             lblAbility2.Size = new Size(0, 15);
             lblAbility2.TabIndex = 6;
-            lblAbility2.MouseHover += lblAbility1_MouseHover;
+            lblAbility2.MouseHover += lblAbility2_MouseHover;
             // 
             // lblAbility3
             // 
             lblAbility3.AutoSize = true;
             lblAbility3.Cursor = Cursors.Help;
-            lblAbility3.Location = new Point(496, 141);
+            lblAbility3.Location = new Point(511, 150);
             lblAbility3.Name = "lblAbility3";
             lblAbility3.Size = new Size(0, 15);
             lblAbility3.TabIndex = 7;
-            lblAbility3.MouseHover += lblAbility1_MouseHover;
+            lblAbility3.MouseHover += lblAbility3_MouseHover;
             // 
             // lblAbility4
             // 
             lblAbility4.AutoSize = true;
             lblAbility4.Cursor = Cursors.Help;
-            lblAbility4.Location = new Point(660, 141);
+            lblAbility4.Location = new Point(675, 150);
             lblAbility4.Name = "lblAbility4";
             lblAbility4.Size = new Size(0, 15);
             lblAbility4.TabIndex = 8;
-            lblAbility4.MouseHover += lblAbility1_MouseHover;
-            // 
-            // lblStat
-            // 
-            lblStat.AutoSize = true;
-            lblStat.Location = new Point(577, 207);
-            lblStat.Name = "lblStat";
-            lblStat.Size = new Size(67, 15);
-            lblStat.TabIndex = 9;
-            lblStat.Text = "Estadísticas";
+            lblAbility4.MouseHover += lblAbility4_MouseHover;
             // 
             // lblStat1
             // 
             lblStat1.AutoSize = true;
-            lblStat1.Location = new Point(496, 228);
+            lblStat1.Location = new Point(499, 262);
             lblStat1.Name = "lblStat1";
             lblStat1.Size = new Size(38, 15);
             lblStat1.TabIndex = 10;
@@ -142,7 +138,7 @@
             // lblStat1b
             // 
             lblStat1b.AutoSize = true;
-            lblStat1b.Location = new Point(496, 243);
+            lblStat1b.Location = new Point(499, 277);
             lblStat1b.Name = "lblStat1b";
             lblStat1b.Size = new Size(38, 15);
             lblStat1b.TabIndex = 11;
@@ -151,7 +147,7 @@
             // lblStat3b
             // 
             lblStat3b.AutoSize = true;
-            lblStat3b.Location = new Point(496, 304);
+            lblStat3b.Location = new Point(499, 338);
             lblStat3b.Name = "lblStat3b";
             lblStat3b.Size = new Size(38, 15);
             lblStat3b.TabIndex = 13;
@@ -160,7 +156,7 @@
             // lblStat3
             // 
             lblStat3.AutoSize = true;
-            lblStat3.Location = new Point(496, 289);
+            lblStat3.Location = new Point(499, 323);
             lblStat3.Name = "lblStat3";
             lblStat3.Size = new Size(38, 15);
             lblStat3.TabIndex = 12;
@@ -169,7 +165,7 @@
             // lblStat2b
             // 
             lblStat2b.AutoSize = true;
-            lblStat2b.Location = new Point(660, 243);
+            lblStat2b.Location = new Point(675, 277);
             lblStat2b.Name = "lblStat2b";
             lblStat2b.Size = new Size(38, 15);
             lblStat2b.TabIndex = 15;
@@ -178,7 +174,7 @@
             // lblStat2
             // 
             lblStat2.AutoSize = true;
-            lblStat2.Location = new Point(660, 228);
+            lblStat2.Location = new Point(675, 262);
             lblStat2.Name = "lblStat2";
             lblStat2.Size = new Size(38, 15);
             lblStat2.TabIndex = 14;
@@ -187,7 +183,7 @@
             // lblStat4b
             // 
             lblStat4b.AutoSize = true;
-            lblStat4b.Location = new Point(660, 304);
+            lblStat4b.Location = new Point(675, 338);
             lblStat4b.Name = "lblStat4b";
             lblStat4b.Size = new Size(38, 15);
             lblStat4b.TabIndex = 17;
@@ -196,7 +192,7 @@
             // lblStat4
             // 
             lblStat4.AutoSize = true;
-            lblStat4.Location = new Point(660, 289);
+            lblStat4.Location = new Point(675, 323);
             lblStat4.Name = "lblStat4";
             lblStat4.Size = new Size(38, 15);
             lblStat4.TabIndex = 16;
@@ -205,7 +201,7 @@
             // lblStat5b
             // 
             lblStat5b.AutoSize = true;
-            lblStat5b.Location = new Point(496, 358);
+            lblStat5b.Location = new Point(499, 392);
             lblStat5b.Name = "lblStat5b";
             lblStat5b.Size = new Size(38, 15);
             lblStat5b.TabIndex = 19;
@@ -214,7 +210,7 @@
             // lblStat5
             // 
             lblStat5.AutoSize = true;
-            lblStat5.Location = new Point(496, 343);
+            lblStat5.Location = new Point(499, 377);
             lblStat5.Name = "lblStat5";
             lblStat5.Size = new Size(38, 15);
             lblStat5.TabIndex = 18;
@@ -223,7 +219,7 @@
             // lblStat6b
             // 
             lblStat6b.AutoSize = true;
-            lblStat6b.Location = new Point(660, 358);
+            lblStat6b.Location = new Point(675, 392);
             lblStat6b.Name = "lblStat6b";
             lblStat6b.Size = new Size(44, 15);
             lblStat6b.TabIndex = 21;
@@ -232,7 +228,7 @@
             // lblStat6
             // 
             lblStat6.AutoSize = true;
-            lblStat6.Location = new Point(660, 343);
+            lblStat6.Location = new Point(675, 377);
             lblStat6.Name = "lblStat6";
             lblStat6.Size = new Size(38, 15);
             lblStat6.TabIndex = 20;
@@ -240,7 +236,7 @@
             // 
             // btnRandom
             // 
-            btnRandom.Location = new Point(150, 358);
+            btnRandom.Location = new Point(144, 318);
             btnRandom.Name = "btnRandom";
             btnRandom.Size = new Size(75, 23);
             btnRandom.TabIndex = 22;
@@ -248,11 +244,47 @@
             btnRandom.UseVisualStyleBackColor = true;
             btnRandom.Click += btnRandom_Click;
             // 
+            // lblStat
+            // 
+            lblStat.AutoSize = true;
+            lblStat.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblStat.Location = new Point(536, 221);
+            lblStat.Name = "lblStat";
+            lblStat.Size = new Size(134, 30);
+            lblStat.TabIndex = 23;
+            lblStat.Text = "Estadísticas";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Location = new Point(405, 11);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(2, 427);
+            panel1.TabIndex = 24;
+            // 
+            // iconPictureBoxCircleQuestion
+            // 
+            iconPictureBoxCircleQuestion.BackColor = SystemColors.Control;
+            iconPictureBoxCircleQuestion.ForeColor = SystemColors.ControlText;
+            iconPictureBoxCircleQuestion.IconChar = FontAwesome.Sharp.IconChar.CircleQuestion;
+            iconPictureBoxCircleQuestion.IconColor = SystemColors.ControlText;
+            iconPictureBoxCircleQuestion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBoxCircleQuestion.IconSize = 26;
+            iconPictureBoxCircleQuestion.Location = new Point(670, 78);
+            iconPictureBoxCircleQuestion.Name = "iconPictureBoxCircleQuestion";
+            iconPictureBoxCircleQuestion.Size = new Size(27, 26);
+            iconPictureBoxCircleQuestion.TabIndex = 25;
+            iconPictureBoxCircleQuestion.TabStop = false;
+            iconPictureBoxCircleQuestion.MouseHover += iconPictureBoxCircleQuestion_MouseHover;
+            // 
             // PokeApiView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconPictureBoxCircleQuestion);
+            Controls.Add(panel1);
+            Controls.Add(lblStat);
             Controls.Add(btnRandom);
             Controls.Add(lblStat6b);
             Controls.Add(lblStat6);
@@ -266,7 +298,6 @@
             Controls.Add(lblStat3);
             Controls.Add(lblStat1b);
             Controls.Add(lblStat1);
-            Controls.Add(lblStat);
             Controls.Add(lblAbility4);
             Controls.Add(lblAbility3);
             Controls.Add(lblAbility2);
@@ -274,10 +305,12 @@
             Controls.Add(cbxPokemons);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PokeApiView";
             Text = "PokeApi";
             Load += PokeApiView_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBoxCircleQuestion).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,7 +324,6 @@
         private Label lblAbility2;
         private Label lblAbility3;
         private Label lblAbility4;
-        private Label lblStat;
         private Label lblStat1;
         private Label lblStat1b;
         private Label lblStat3b;
@@ -305,5 +337,8 @@
         private Label lblStat6b;
         private Label lblStat6;
         private Button btnRandom;
+        private Label lblStat;
+        private Panel panel1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxCircleQuestion;
     }
 }

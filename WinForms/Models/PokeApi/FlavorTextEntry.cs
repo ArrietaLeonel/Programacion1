@@ -8,7 +8,7 @@ namespace WinForms.Models.PokeApi
 {
     public class FlavorTextEntry
     {
-        public string flavor_text { get; set; }
+        public string? flavor_text { get; set; }
         public Language language { get; set; }
     }
         

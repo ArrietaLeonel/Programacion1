@@ -18,7 +18,7 @@ namespace WinForms.Views
         string url = "https://pokeapi.co/api/v2/pokemon?limit=10000";
         HttpClient _httpClient;
         Root _lstPokemon;
-        Pokemon _listPokemonHabilidad;
+        Ability habilidadDesc;
         bool _cbxCargado = false;
         List<Label> _lstlabelAbility;
         List<Label> _lstlabelStatValue;
@@ -134,12 +134,17 @@ namespace WinForms.Views
         {
             try
             {
-
                 var urlAbility = $"https://pokeapi.co/api/v2/ability/{abilityName}";
                 var response = await _httpClient.GetAsync(urlAbility);
+
                 if (response.IsSuccessStatusCode)
                 {
                     var habilidad = await response.Content.ReadFromJsonAsync<Ability>();
+
+                    if (habilidad == null)
+                        return;
+
+                    habilidadDesc = habilidad;
 
                 }
                 else
@@ -167,6 +172,69 @@ namespace WinForms.Views
         private async void lblAbility1_MouseHover(object sender, EventArgs e)
         {
             await ObtenerHabilidad(lblAbility1.Text);
+            // Devuelve desc español
+            var descripcion = string.Join(
+                Environment.NewLine,
+                habilidadDesc.flavor_text_entries
+                .Where(x => x.language.name == "es")
+                .Select(x => x.flavor_text)
+                .Distinct()
+            );
+            ToolTip toolTipDescripcionEspañol = new ToolTip();
+            toolTipDescripcionEspañol.SetToolTip(lblAbility1, descripcion);
+        }
+
+        private async void lblAbility2_MouseHover(object sender, EventArgs e)
+        {
+            await ObtenerHabilidad(lblAbility2.Text);
+            // Devuelve desc español
+            var descripcion = string.Join(
+                Environment.NewLine,
+                habilidadDesc.flavor_text_entries
+                .Where(x => x.language.name == "es")
+                .Select(x => x.flavor_text)
+                .Distinct()
+            );
+            ToolTip toolTipDescripcionEspañol = new ToolTip();
+            toolTipDescripcionEspañol.SetToolTip(lblAbility2, descripcion);
+        }
+
+        private async void lblAbility3_MouseHover(object sender, EventArgs e)
+        {
+            await ObtenerHabilidad(lblAbility3.Text);
+            // Devuelve desc español
+            var descripcion = string.Join(
+                Environment.NewLine,
+                habilidadDesc.flavor_text_entries
+                .Where(x => x.language.name == "es")
+                .Select(x => x.flavor_text)
+                .Distinct()
+            );
+            ToolTip toolTipDescripcionEspañol = new ToolTip();
+            toolTipDescripcionEspañol.SetToolTip(lblAbility3, descripcion);
+        }
+
+
+
+        private async void lblAbility4_MouseHover(object sender, EventArgs e)
+        {
+            await ObtenerHabilidad(lblAbility4.Text);
+            // Devuelve desc español
+            var descripcion = string.Join(
+                Environment.NewLine,
+                habilidadDesc.flavor_text_entries
+                .Where(x => x.language.name == "es")
+                .Select(x => x.flavor_text)
+                .Distinct()
+            );
+            ToolTip toolTipDescripcionEspañol = new ToolTip();
+            toolTipDescripcionEspañol.SetToolTip(lblAbility4, descripcion);
+        }
+
+        private void iconPictureBoxCircleQuestion_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip toolTipDescripcion = new ToolTip();
+            toolTipDescripcion.SetToolTip(iconPictureBoxCircleQuestion,"Para acceder a informacion detallada de las habilidades coloque el mouse encima de ellas.");
         }
     }
 }
