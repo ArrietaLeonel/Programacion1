@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace WinForms.Models.PokeApi
 {
-    public class Ability
+    public class Language
     {
-        public Ability2 ability { get; set; }
-        public List<FlavorTextEntry> flavor_text_entries { get; set; }
-
+        public string name { get; set; }
     }
 }
