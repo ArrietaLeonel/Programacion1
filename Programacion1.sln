@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppWebAssembly", "Bla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{94F73A23-C032-4A48-B77B-770B00A92563}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1", "MauiApp1\MauiApp1.csproj", "{EED31977-F617-4978-B910-A272C8BE666A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{94F73A23-C032-4A48-B77B-770B00A92563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94F73A23-C032-4A48-B77B-770B00A92563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94F73A23-C032-4A48-B77B-770B00A92563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED31977-F617-4978-B910-A272C8BE666A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

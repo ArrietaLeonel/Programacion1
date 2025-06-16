@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.MovieView"
+             Title="MovieView">
+    
+    <Label Text="Películas"
+           FontSize="24"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           Margin="10"/>
+    
+    <ListView
+        x:Name="MoviesListView"
+        HasUnevenRows="True"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10" ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- Portada -->
+                        <Image Grid.Column="0"
+                       Source="{Binding cover}"
+                       WidthRequest="70"
+                       HeightRequest="100"
+                       Aspect="AspectFill"
+                       VerticalOptions="Center"/>
+                        <!-- Detalles -->
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="{Binding title}" 
+                           FontAttributes="Bold" 
+                           FontSize="18"/>
+                            <Label Text="{Binding duration, StringFormat='Duración: {0} min'}" />
+                            <Label Text="{Binding qualification, StringFormat='Calificación: {0}'}"
+                           FontSize="14"/>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

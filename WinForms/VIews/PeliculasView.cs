@@ -16,6 +16,8 @@ namespace WinForms.VIews
     public partial class PeliculasView : Form
     {
         HttpClient client = new HttpClient();
+        List<Movie> movies = new List<Movie>();
+        string apiUrl = "https://test01-b728.restdb.io/rest/movies?apikey=babe9772b258e7fb57cc9f74e99f56993bce3";
         public PeliculasView()
         {
             InitializeComponent();
@@ -23,10 +25,9 @@ namespace WinForms.VIews
         }
         private async void GetMovie()
         {
-            const string apiUrl = "https://test01-b728.restdb.io/rest/movies?apikey=babe9772b258e7fb57cc9f74e99f56993bce3";
 
             var response = await client.GetAsync(apiUrl);
-            List<Movie> movies = await response.Content.ReadFromJsonAsync<List<Movie>>();
+            movies = await response.Content.ReadFromJsonAsync<List<Movie>>();
 
             dgvMovie.DataSource = movies;
 
@@ -76,10 +77,23 @@ namespace WinForms.VIews
 
         private void dgvMovie_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvMovie.RowCount>0 && dgvMovie.SelectedRows.Count > 0)
+            if (dgvMovie.RowCount > 0 && dgvMovie.SelectedRows.Count > 0)
             {
                 Movie movieSelected = (Movie)dgvMovie.SelectedRows[0].DataBoundItem;
                 picboxMovie.ImageLocation = movieSelected.cover;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvMovie.DataSource = movies.Where(m => m.title.ToLower().Contains(txtBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                btnBuscar.PerformClick();
             }
         }
     }

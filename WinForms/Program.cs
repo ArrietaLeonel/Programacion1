@@ -1,4 +1,5 @@
 using WinForms.Views;
+using WinForms.VIews;
 
 namespace WinForms
 {
@@ -13,7 +14,7 @@ namespace WinForms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PokeApiView());
+            Application.Run(new PeliculasView());
         }
     }
 }
