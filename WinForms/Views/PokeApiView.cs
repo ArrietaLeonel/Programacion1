@@ -60,10 +60,10 @@ namespace WinForms.Views
 
         private async void PokeApiView_Load(object sender, EventArgs e)
         {
-            await ObtenerPokemon();
+            await ObtenerPokemonAsync();
         }
 
-        private async Task ObtenerPokemon()
+        private async Task ObtenerPokemonAsync()
         {
             try
             {
@@ -78,7 +78,7 @@ namespace WinForms.Views
                         cbxPokemons.ValueMember = "url";
                         _cbxCargado = true;
                         cbxPokemons.SelectedIndex = 0;
-                        await CargarPokemon();
+                        await CargarPokemonAsync();
                         var autoComplete = new AutoCompleteStringCollection();
                         autoComplete.AddRange(_lstPokemon.results.Select(p => p.name).ToArray());
                         cbxPokemons.AutoCompleteCustomSource = autoComplete;
@@ -95,7 +95,7 @@ namespace WinForms.Views
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-        private async Task CargarPokemon()
+        private async Task CargarPokemonAsync()
         {
 
             try
@@ -160,7 +160,7 @@ namespace WinForms.Views
         private async void cbxPokemons_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!_cbxCargado) return;
-            await CargarPokemon();
+            await CargarPokemonAsync();
 
         }
 

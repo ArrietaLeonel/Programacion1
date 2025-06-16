@@ -131,108 +131,96 @@
             lblStat1.AutoSize = true;
             lblStat1.Location = new Point(499, 262);
             lblStat1.Name = "lblStat1";
-            lblStat1.Size = new Size(38, 15);
+            lblStat1.Size = new Size(0, 15);
             lblStat1.TabIndex = 10;
-            lblStat1.Text = "label2";
             // 
             // lblStat1b
             // 
             lblStat1b.AutoSize = true;
             lblStat1b.Location = new Point(499, 277);
             lblStat1b.Name = "lblStat1b";
-            lblStat1b.Size = new Size(38, 15);
+            lblStat1b.Size = new Size(0, 15);
             lblStat1b.TabIndex = 11;
-            lblStat1b.Text = "label2";
             // 
             // lblStat3b
             // 
             lblStat3b.AutoSize = true;
             lblStat3b.Location = new Point(499, 338);
             lblStat3b.Name = "lblStat3b";
-            lblStat3b.Size = new Size(38, 15);
+            lblStat3b.Size = new Size(0, 15);
             lblStat3b.TabIndex = 13;
-            lblStat3b.Text = "label3";
             // 
             // lblStat3
             // 
             lblStat3.AutoSize = true;
             lblStat3.Location = new Point(499, 323);
             lblStat3.Name = "lblStat3";
-            lblStat3.Size = new Size(38, 15);
+            lblStat3.Size = new Size(0, 15);
             lblStat3.TabIndex = 12;
-            lblStat3.Text = "label2";
             // 
             // lblStat2b
             // 
             lblStat2b.AutoSize = true;
             lblStat2b.Location = new Point(675, 277);
             lblStat2b.Name = "lblStat2b";
-            lblStat2b.Size = new Size(38, 15);
+            lblStat2b.Size = new Size(0, 15);
             lblStat2b.TabIndex = 15;
-            lblStat2b.Text = "label5";
             // 
             // lblStat2
             // 
             lblStat2.AutoSize = true;
             lblStat2.Location = new Point(675, 262);
             lblStat2.Name = "lblStat2";
-            lblStat2.Size = new Size(38, 15);
+            lblStat2.Size = new Size(0, 15);
             lblStat2.TabIndex = 14;
-            lblStat2.Text = "label2";
             // 
             // lblStat4b
             // 
             lblStat4b.AutoSize = true;
             lblStat4b.Location = new Point(675, 338);
             lblStat4b.Name = "lblStat4b";
-            lblStat4b.Size = new Size(38, 15);
+            lblStat4b.Size = new Size(0, 15);
             lblStat4b.TabIndex = 17;
-            lblStat4b.Text = "label7";
             // 
             // lblStat4
             // 
             lblStat4.AutoSize = true;
             lblStat4.Location = new Point(675, 323);
             lblStat4.Name = "lblStat4";
-            lblStat4.Size = new Size(38, 15);
+            lblStat4.Size = new Size(0, 15);
             lblStat4.TabIndex = 16;
-            lblStat4.Text = "label2";
             // 
             // lblStat5b
             // 
             lblStat5b.AutoSize = true;
             lblStat5b.Location = new Point(499, 392);
             lblStat5b.Name = "lblStat5b";
-            lblStat5b.Size = new Size(38, 15);
+            lblStat5b.Size = new Size(0, 15);
             lblStat5b.TabIndex = 19;
-            lblStat5b.Text = "label9";
             // 
             // lblStat5
             // 
             lblStat5.AutoSize = true;
             lblStat5.Location = new Point(499, 377);
             lblStat5.Name = "lblStat5";
-            lblStat5.Size = new Size(38, 15);
+            lblStat5.Size = new Size(0, 15);
             lblStat5.TabIndex = 18;
-            lblStat5.Text = "label2";
             // 
             // lblStat6b
             // 
             lblStat6b.AutoSize = true;
             lblStat6b.Location = new Point(675, 392);
             lblStat6b.Name = "lblStat6b";
-            lblStat6b.Size = new Size(44, 15);
+            lblStat6b.Size = new Size(0, 15);
             lblStat6b.TabIndex = 21;
-            lblStat6b.Text = "label11";
             // 
             // lblStat6
             // 
             lblStat6.AutoSize = true;
             lblStat6.Location = new Point(675, 377);
             lblStat6.Name = "lblStat6";
-            lblStat6.Size = new Size(38, 15);
+            lblStat6.Size = new Size(0, 15);
             lblStat6.TabIndex = 20;
-            lblStat6.Text = "label2";
             // 
             // btnRandom
             // 

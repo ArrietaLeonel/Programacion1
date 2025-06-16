@@ -26,7 +26,7 @@ namespace WinForms.Views
         private async void GetMovie()
         {
             var response = await client.GetAsync(apiUrl);
-            List<Movie> movies = await response.Content.ReadFromJsonAsync<List<Movie>>();
+            movies = await response.Content.ReadFromJsonAsync<List<Movie>>();
 
             dgvMovie.DataSource = movies;
 
@@ -166,6 +166,19 @@ namespace WinForms.Views
             movie.cover = string.Empty;
             movie.duration = 0;
             movie.qualification = 0;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvMovie.DataSource = movies.Where(m => m.title.ToLower().Contains(txtBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                btnBuscar.PerformClick();
+            }
         }
     }
 }
