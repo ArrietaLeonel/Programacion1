@@ -18,6 +18,7 @@ namespace WinForms.Views
         HttpClient client = new HttpClient();
         string apiUrl = "https://test01-b728.restdb.io/rest/movies?apikey=babe9772b258e7fb57cc9f74e99f56993bce3";
         Movie movie = new Movie();
+        List<Movie> movies;
         public PeliculasView()
         {
             InitializeComponent();
@@ -79,7 +80,7 @@ namespace WinForms.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            limpiarObjeto();
+            limpiarCampos();
             tabControl1.SelectedTab = tabPageAgrMod;
 
 
@@ -131,7 +132,7 @@ namespace WinForms.Views
 
         }
 
- 
+
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -168,17 +169,18 @@ namespace WinForms.Views
             movie.qualification = 0;
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void txtbSearch_TextChanged(object sender, EventArgs e)
         {
-            dgvMovie.DataSource = movies.Where(m => m.title.ToLower().Contains(txtBuscar.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+            if (string.IsNullOrWhiteSpace(txtbSearch.Text))
+            {
+                GetMovie();
+            }
+            btnBuscar.PerformClick();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
-            {
-                btnBuscar.PerformClick();
-            }
+            dgvMovie.DataSource = movies.Where(m => m.title.ToLower().Contains(txtbSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
 }

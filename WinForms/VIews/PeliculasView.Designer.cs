@@ -101,6 +101,7 @@
             btnBuscar.Size = new Size(32, 23);
             btnBuscar.TabIndex = 14;
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtbSearch
             // 
@@ -108,6 +109,7 @@
             txtbSearch.Name = "txtbSearch";
             txtbSearch.Size = new Size(234, 23);
             txtbSearch.TabIndex = 13;
+            txtbSearch.TextChanged += txtbSearch_TextChanged;
             // 
             // label1
             // 
