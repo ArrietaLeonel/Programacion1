@@ -25,7 +25,7 @@ namespace WinForms.Views
             GetGames();
         }
 
-        private async void GetGames()
+        private async Task GetGames()
         {
             try
             {
@@ -59,7 +59,6 @@ namespace WinForms.Views
                 MessageBox.Show("Error al obtener los juegos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             CleanFields();
@@ -83,7 +82,7 @@ namespace WinForms.Views
                 MessageBox.Show("Debe seleccionar un juego para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private async void btnDelete_Click(object sender, EventArgs e)
+        private async Task btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvGames.RowCount > 0 && dgvGames.SelectedRows.Count > 0)
             {
@@ -107,16 +106,31 @@ namespace WinForms.Views
                 MessageBox.Show("Debe seleccionar un juego para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        private void dgvGames_SelectionChanged(object sender, EventArgs e)
+        {
+            pictureBoxList.ImageLocation = dgvGames.SelectedRows.Count > 0 ? ((Game)dgvGames.SelectedRows[0].DataBoundItem).imageUrl : null;
+        }
+        private void txtbSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtbSearch.Text))
+            {
+                GetGames();
+            }
+            else
+            {
+                var filteredGames = games.Where(g => g.title.Contains(txtbSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+                dgvGames.DataSource = filteredGames;
+            }
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            games = games.Where(g => g.title.Contains(txtbSearch.Text)).ToList();
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void txtImageUrl_TextChanged(object sender, EventArgs e)
-        {
-            pictureBoxAddEdit.ImageLocation = txtImageUrl.Text;
 
-        }
         private void CleanFields()
         {
             txtTitle.Text = string.Empty;
@@ -130,20 +144,12 @@ namespace WinForms.Views
             game = new Game();
         }
 
-
-        private void dgvGames_SelectionChanged(object sender, EventArgs e)
+        private void txtImageUrl_TextChanged(object sender, EventArgs e)
         {
-            pictureBoxList.ImageLocation = dgvGames.SelectedRows.Count > 0 ? ((Game)dgvGames.SelectedRows[0].DataBoundItem).imageUrl : null;
-        }
+            pictureBoxAddEdit.ImageLocation = txtImageUrl.Text;
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            CleanFields();
-            CleanObject();
-            tabControlFavGames.SelectTab(Lista);
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private async Task btnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -155,7 +161,7 @@ namespace WinForms.Views
                 if (string.IsNullOrEmpty(game._id))
                 {
 
-                    var response = client.PostAsJsonAsync(Url, game).Result;
+                    var response = await client.PostAsJsonAsync(Url, game);
                     if (response.IsSuccessStatusCode)
                     {
                         MessageBox.Show("Juego agregado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -188,6 +194,12 @@ namespace WinForms.Views
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CleanFields();
+            CleanObject();
+            tabControlFavGames.SelectTab(Lista);
         }
 
     }

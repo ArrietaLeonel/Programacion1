@@ -34,7 +34,7 @@
             dgvGames = new DataGridView();
             btnRemove = new FontAwesome.Sharp.IconButton();
             btnSearch = new FontAwesome.Sharp.IconButton();
-            textBox6 = new TextBox();
+            txtbSearch = new TextBox();
             btnExit = new FontAwesome.Sharp.IconButton();
             btnEdit = new FontAwesome.Sharp.IconButton();
             btnAdd = new FontAwesome.Sharp.IconButton();
@@ -81,7 +81,7 @@
             Lista.Controls.Add(dgvGames);
             Lista.Controls.Add(btnRemove);
             Lista.Controls.Add(btnSearch);
-            Lista.Controls.Add(textBox6);
+            Lista.Controls.Add(txtbSearch);
             Lista.Controls.Add(btnExit);
             Lista.Controls.Add(btnEdit);
             Lista.Controls.Add(btnAdd);
@@ -139,14 +139,16 @@
             btnSearch.TabIndex = 25;
             btnSearch.Text = "Buscar";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // textBox6
+            // txtbSearch
             // 
-            textBox6.BackColor = SystemColors.Control;
-            textBox6.Location = new Point(6, 19);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(428, 24);
-            textBox6.TabIndex = 24;
+            txtbSearch.BackColor = SystemColors.Control;
+            txtbSearch.Location = new Point(6, 19);
+            txtbSearch.Name = "txtbSearch";
+            txtbSearch.Size = new Size(428, 24);
+            txtbSearch.TabIndex = 24;
+            txtbSearch.TextChanged += txtbSearch_TextChanged;
             // 
             // btnExit
             // 
@@ -420,7 +422,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox6;
+        private TextBox txtbSearch;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnEdit;
         private FontAwesome.Sharp.IconButton btnAdd;
