@@ -294,7 +294,7 @@
             pictureBoxAddEdit.Location = new Point(561, 19);
             pictureBoxAddEdit.Name = "pictureBoxAddEdit";
             pictureBoxAddEdit.Size = new Size(219, 189);
-            pictureBoxAddEdit.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBoxAddEdit.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxAddEdit.TabIndex = 18;
             pictureBoxAddEdit.TabStop = false;
             // 
