@@ -14,18 +14,18 @@ using WinForms.Services;
 
 namespace WinForms.Views
 {
-    public partial class PeliculasView : Form
+    public partial class PeliculasADOView : Form
     {
-        PeliculaService service = new();
+        PeliculaADOService service = new();
         Movie movie = new Movie();
         List<Movie>? movies;
-        public PeliculasView()
+        public PeliculasADOView()
         {
             InitializeComponent();
             GetMovie();
         }
         private async void GetMovie()
-        {
+        {   
             movies = await service.GetAllAsync();
             dgvMovie.DataSource = movies;
         }
@@ -39,7 +39,7 @@ namespace WinForms.Views
                 if (response == DialogResult.Yes)
                 {
 
-                    if (!await service.DeleteAsync(movie._id))
+                    if (!await service.DeleteAsync(movie.id))
                     {
                         MessageBox.Show("Error al eliminar la película", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -182,7 +182,7 @@ namespace WinForms.Views
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(movies == null)
+            if (movies == null)
             {
                 MessageBox.Show("No hay películas cargadas para buscar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

@@ -25,33 +25,12 @@ namespace WinForms.Views
             GetGames();
         }
 
-        private async Task GetGames()
+        private async void GetGames()
         {
             try
             {
-                //games = await client.GetFromJsonAsync<List<Game>>(Url);
-                var game1 = new Game
-                {
-                    _id = "1",
-                    title = "The Legend of Zelda",
-                    platform = "Nintendo Switch",
-                    genre = "Adventure",
-                    imageUrl = "https://i.etsystatic.com/40317824/r/il/f8732c/4873087013/il_794xN.4873087013_f92d.jpg",
-                    releaseYear = 2017
-                };
-
-                var game2 = new Game
-                {
-                    _id = "2",
-                    title = "Halo Infinite",
-                    platform = "Xbox Series X",
-                    genre = "Shooter",
-                    imageUrl = "https://wallpapercave.com/wp/wp4813418.png",
-                    releaseYear = 2021
-                };
-                games.Add(game1);
-                games.Add(game2);
-
+                games = await client.GetFromJsonAsync<List<Game>>(Url);
+               
                 dgvGames.DataSource = games;
             }
             catch
@@ -82,7 +61,7 @@ namespace WinForms.Views
                 MessageBox.Show("Debe seleccionar un juego para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private async Task btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvGames.RowCount > 0 && dgvGames.SelectedRows.Count > 0)
             {
@@ -149,7 +128,7 @@ namespace WinForms.Views
             pictureBoxAddEdit.ImageLocation = txtImageUrl.Text;
 
         }
-        private async Task btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             try
             {

@@ -9,9 +9,10 @@ namespace WinForms.Models.Pelicula
     public class Movie
     {
         public string? _id { get; set; }
+        public int? id { get; set; }
         public string title { get; set; }
         public int duration { get; set; }
         public string cover { get; set; }
-        public float qualification { get; set; }
+        public double qualification { get; set; }
     }
 }

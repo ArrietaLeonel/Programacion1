@@ -1,6 +1,6 @@
 ﻿namespace WinForms.Views
 {
-    partial class PeliculasView
+    partial class PeliculasADOView
     {
         /// <summary>
         /// Required designer variable.
@@ -157,7 +157,7 @@
             btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSalir.IconSize = 26;
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalir.Location = new Point(826, 438);
+            btnSalir.Location = new Point(826, 458);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(96, 33);
             btnSalir.TabIndex = 10;
