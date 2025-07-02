@@ -102,7 +102,7 @@ namespace WinForms.Views
             movie.cover = txtbCover.Text;
             movie.duration = (int)numericUpDownDuration.Value;
             movie.qualification = (float)numericUpDownQualification.Value;
-            if (string.IsNullOrEmpty(movie._id))
+            if (movie.id is null)
             {
                 
                 if (!await service.AddAsync(movie))
@@ -165,6 +165,7 @@ namespace WinForms.Views
         private void limpiarObjeto()
         {
             movie._id = null;
+            movie.id = null;
             movie.title = string.Empty;
             movie.cover = string.Empty;
             movie.duration = 0;

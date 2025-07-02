@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PeliculasView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PeliculasADOView));
             tabControl1 = new TabControl();
             tabPageLista = new TabPage();
             statusStrip1 = new StatusStrip();
@@ -157,7 +157,7 @@
             btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSalir.IconSize = 26;
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalir.Location = new Point(826, 458);
+            btnSalir.Location = new Point(826, 438);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(96, 33);
             btnSalir.TabIndex = 10;
@@ -358,14 +358,14 @@
             timerStatusBar.Interval = 3000;
             timerStatusBar.Tick += timerStatusBar_Tick;
             // 
-            // PeliculasView
+            // PeliculasADOView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(938, 527);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "PeliculasView";
+            Name = "PeliculasADOView";
             Text = "Peliculas";
             tabControl1.ResumeLayout(false);
             tabPageLista.ResumeLayout(false);

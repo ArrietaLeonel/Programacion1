@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button3 = new Button();
             menuStrip1 = new MenuStrip();
             iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             ClimaAppMenuStrip = new FontAwesome.Sharp.IconMenuItem();
@@ -44,16 +43,6 @@
             AcercadeMenuStrip = new FontAwesome.Sharp.IconMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button3.Location = new Point(713, 415);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -80,7 +69,7 @@
             ClimaAppMenuStrip.IconColor = Color.Black;
             ClimaAppMenuStrip.IconFont = FontAwesome.Sharp.IconFont.Auto;
             ClimaAppMenuStrip.Name = "ClimaAppMenuStrip";
-            ClimaAppMenuStrip.Size = new Size(180, 22);
+            ClimaAppMenuStrip.Size = new Size(163, 22);
             ClimaAppMenuStrip.Text = "Clima App";
             ClimaAppMenuStrip.Click += ClimaAppMenuStrip_Click;
             // 
@@ -91,7 +80,7 @@
             iconMenuItem3.IconColor = Color.Black;
             iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMenuItem3.Name = "iconMenuItem3";
-            iconMenuItem3.Size = new Size(180, 22);
+            iconMenuItem3.Size = new Size(163, 22);
             iconMenuItem3.Text = "Tareas";
             // 
             // EditorTextoMenuStrip
@@ -118,7 +107,7 @@
             // 
             trabajosEnClaseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { películasAPIMenuStrip, películasADOMenuStrip });
             trabajosEnClaseToolStripMenuItem.Name = "trabajosEnClaseToolStripMenuItem";
-            trabajosEnClaseToolStripMenuItem.Size = new Size(180, 22);
+            trabajosEnClaseToolStripMenuItem.Size = new Size(163, 22);
             trabajosEnClaseToolStripMenuItem.Text = "Trabajos en clase";
             // 
             // películasAPIMenuStrip
@@ -171,7 +160,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button3);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -184,7 +172,6 @@
         }
 
         #endregion
-        private Button button3;
         private MenuStrip menuStrip1;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem2;

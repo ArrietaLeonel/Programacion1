@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -56,13 +57,41 @@ namespace WinForms.Services
         }
         public async Task<bool> UpdateAsync(Movie movie)
         {
-            //metodo no implementado
-            return false;
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+                var command = new MySqlCommand($"UPDATE peliculas SET " +
+                    $"titulo='{movie.title}'," +
+                    $"portada='{movie.cover}'," +
+                    $"duracion={movie.duration}," +
+                    $"calificacion={movie.qualification.ToString("F2",CultureInfo.InvariantCulture)}" +
+                    $" WHERE id={movie.id}",
+                    connection);
+                var rowsAffected = await command.ExecuteNonQueryAsync();
+                if (rowsAffected > 0)
+                    return true;
+                else
+                    return false;
+
+            }
         }
         public async Task<bool> AddAsync(Movie movie)
         {
-            //metodo no implementado
-            return false;
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.OpenAsync();
+                var command = new MySqlCommand($"INSERT INTO peliculas (titulo,portada,duracion,calificacion) VALUES" +
+                    $"('{movie.title}'," +
+                    $"'{movie.cover}'," +
+                    $"{movie.duration}," +
+                    $"{movie.qualification.ToString("F2", CultureInfo.InvariantCulture)})",connection);
+                var rowsAffected = await command.ExecuteNonQueryAsync();
+                if (rowsAffected > 0)
+                    return true;
+                else
+                    return false;
+
+            }
         }
     }
 }
